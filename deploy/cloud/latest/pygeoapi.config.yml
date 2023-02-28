@@ -28,7 +28,7 @@ server:
 
 logging:
     level: ERROR
-    logfile: /tmp/pygeoapi.log
+    # logfile: /tmp/pygeoapi.log
 
 metadata:
     identification:
@@ -98,13 +98,12 @@ resources:
             - type: feature
               name: PostgreSQL
               data:
-                host: ${DBHOST}
-                dbname: ${DBNAME}
-                user: ${DBUSER}
-                password: ${DBPASSWORD}
-                search_path: [public]
-              geom_field: wkb_geometry
-              id_field: ogc_fid
+                host: ${POSTGRES_HOST}
+                dbname: ${POSTGRES_DB}
+                user: ${POSTGRES_USER}
+                password: ${POSTGRES_PASSWORD}
+              geom_field: geom
+              id_field: fid
               table: merit_plus
 
     river-runner:

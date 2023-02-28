@@ -98,13 +98,13 @@ resources:
             - type: feature
               name: PostgreSQL
               data:
-                host: ${DBHOST}
-                dbname: ${DBNAME}
-                user: ${DBUSER}
-                password: ${DBPASSWORD}
+                host: ${POSTGRES_HOST}
+                dbname: ${POSTGRES_DB}
+                user: ${POSTGRES_USER}
+                password: ${POSTGRES_PASSWORD}
                 search_path: [public]
-              geom_field: wkb_geometry
-              id_field: ogc_fid
+              geom_field: geom
+              id_field: fid
               table: merit_plus
 
     river-runner:
